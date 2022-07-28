@@ -16,3 +16,6 @@ cmake --build . --clean-first
  - https://libcheck.github.io/check/doc/check_html/check_3.html#Tutorial
  - https://github.com/ttroy50/cmake-examples/tree/master/01-basic/A-hello-cmake
  - https://www.sudokuwiki.org/Strategy_Families
+
+ ## Stretch Goals
+ - make this run in docker to eliminate platform issues
