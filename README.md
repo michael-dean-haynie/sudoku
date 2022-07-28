@@ -5,8 +5,9 @@
 
 ## Build
 ``` sh
+mkdir build
 cd /build
 cmake ..
-make
+cmake --build . --clean-first
 ./sudoku # --> hello world
 ```
