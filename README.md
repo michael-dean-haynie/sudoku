@@ -2,6 +2,7 @@
 
 ## Prequisites
 - [cmake](https://cmake.org/install/)
+- [check](https://libcheck.github.io/check/web/install.html)
 
 ## Build
 ``` sh
