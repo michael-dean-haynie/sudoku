@@ -1,22 +1,22 @@
-# sudoku
-
-## Prequisites
-- [cmake](https://cmake.org/install/)
-- [check](https://libcheck.github.io/check/web/install.html)
+# Sudoku
 
 ## Build
+([cmake](https://cmake.org/install/) must be installed.)
 ``` sh
-mkdir build
+cmake -S . -B build
+cmake --build build
+```
+
+## Test
+(First, the steps in [Build](#build) must be completed.)
+``` sh
 cd /build
-cmake ..
-cmake --build . --clean-first
-./sudoku # --> hello world
+ctest
 ```
 
 ## Reference Materials
- - https://libcheck.github.io/check/doc/check_html/check_3.html#Tutorial
- - https://github.com/ttroy50/cmake-examples/tree/master/01-basic/A-hello-cmake
- - https://www.sudokuwiki.org/Strategy_Families
+- https://google.github.io/googletest/quickstart-cmake.html
+- https://www.sudokuwiki.org/Strategy_Families
 
- ## Stretch Goals
- - make this run in docker to eliminate platform issues
+## Stretch Goals
+- make this run in docker to eliminate platform issues
