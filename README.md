@@ -1,20 +1,26 @@
 # Sudoku
 
-## Build
-([cmake](https://cmake.org/install/) must be installed.)
+## Build / Test / Run
+[cmake](https://cmake.org/install/) must be installed.
+
+Generate the build system:
 ``` sh
-# generate the buildsystem (make)
 cmake -S . -B build
-# invoke the buildsystem (make)
+```
+
+Invoke the build system:
+``` sh
 cmake --build build
 ```
 
-## Test
-(First, the steps in [Build](#build) must be completed.)
+Run the tests:
 ``` sh
-cd /build
-# run the test target
-ctest
+ctest --test-dir build/test
+```
+
+Run the app:
+``` sh
+build/src/app
 ```
 
 ## Reference Materials
