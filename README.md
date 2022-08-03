@@ -3,6 +3,11 @@
 ## Build / Test / Run
 [cmake](https://cmake.org/install/) must be installed.
 
+Delete any existing cmake artifacts:
+``` sh
+rm -rf ./build
+```
+
 Generate the build system:
 ``` sh
 cmake -S . -B build
@@ -15,7 +20,7 @@ cmake --build build
 
 Run the tests:
 ``` sh
-ctest --test-dir build/test
+ctest --test-dir build/test --output-on-failure
 ```
 
 Run the app:

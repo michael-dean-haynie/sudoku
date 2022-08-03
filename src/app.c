@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include "subtract.h"
 
 int main(void) {
-    printf("app has been executed\n");
+    printf("5 - 1 = %d\n", subtract(5,1));
     return 0;
 }

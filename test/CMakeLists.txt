@@ -17,10 +17,12 @@ add_executable(
   tests
   hello_test.cc
   my_test.cc
+  subtract_test.cc
 )
 target_link_libraries(
   tests
   GTest::gtest_main
+  applibs
 )
 
 include(GoogleTest)
