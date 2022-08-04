@@ -3,10 +3,6 @@
 
 #define ROWS 9 // number of rows in a grid
 #define COLS 9 // number of columns in a grid
-#define GROUP_SIZE 9 // number of cells in a group
-
-// Group: An array of Cell pointers
-typedef Cell *(Group[GROUP_SIZE]);
 
 // Grid: a 9x9 2-dimensional array of cell pointers
 typedef Cell *(Grid[ROWS][COLS]);
