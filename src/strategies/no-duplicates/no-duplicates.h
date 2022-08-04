@@ -1,3 +1,4 @@
 #include "grid.h"
+#include "progress-event.h"
 
-void noDuplicatesStrat(Grid *grid_p, int row, int col);
+ProgressEvent* noDuplicatesStrat(Grid *grid_p, int row, int col);

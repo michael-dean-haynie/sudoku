@@ -28,14 +28,14 @@ void freeCell(Cell *cell) {
 void printCellData(Cell *cell) {
     printf("Logging cell at (%d,%d):\n", cell->row, cell->col);
     printf("  value: %d\n", cell->value);
-    printCellNotes(cell);
+    printf("  notes: ");
+    printNotes(cell->notes);
     // printCellNotesDetailed(cell);
 }
 
-void printCellNotes(Cell *cell) {
-    printf("  notes: ");
+void printNotes(int notes[]) {
     for (int i = 1; i <= MAX_VAL; i++) {
-        int note = cell->notes[i];
+        int note = notes[i];
         if (note == 1) {
             printf("%d", i);
         } else {

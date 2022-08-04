@@ -11,7 +11,12 @@ int main(void) {
 
     for (int row = 0; row < ROWS; row++) {
         for (int col = 0; col < COLS; col++) {
-            noDuplicatesStrat(grid_p, row, col);
+            ProgressEvent *pe_p = noDuplicatesStrat(grid_p, row, col);
+            if (pe_p != NULL) {
+                printProgressEvent(pe_p);
+                freeProgressEvent(pe_p);
+                col--; // do again
+            }
         }
     }
     printGrid(grid_p);

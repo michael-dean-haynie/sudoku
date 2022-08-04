@@ -1,7 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "no-duplicates.h"
 #include "unit.h"
 
-void noDuplicatesStrat(Grid *grid_p, int row, int col) {
+ProgressEvent* noDuplicatesStrat(Grid *grid_p, int row, int col) {
     Cell *cellToSolve = (*grid_p)[row][col];
     Unit *units[3] = {
         getRowUnit(grid_p, row, col),
@@ -17,14 +20,28 @@ void noDuplicatesStrat(Grid *grid_p, int row, int col) {
                 continue; // don't compare target cell against itself
             }
             if (cell->value && cellToSolve->notes[cell->value]) {
+                char *funcName = malloc(strlen(__func__) + 1);
+                strcpy(funcName, __func__);
+                ProgressEvent *pe_p = prepProgressEvent(cellToSolve, funcName);
                 cellToSolve->notes[cell->value] = 0;
-                // TODO: save progress event
+                updateProgressEvent(pe_p, cellToSolve);
+
+                // free units
+                for (int ui = 0; ui < 3; ui++) { // units index
+                    freeUnit(units[ui]);
+                }
+
+                // return at first progress event
+                return pe_p;
             }
         }
     }
 
     // free units
-    for (int i = 0; i < 3; i++) {
-        freeUnit(units[i]);
+    for (int ui = 0; ui < 3; ui++) { // units index
+        freeUnit(units[ui]);
     }
+
+    // return null pointer if no progress was made
+    return NULL;
 }

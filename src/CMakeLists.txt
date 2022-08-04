@@ -7,6 +7,7 @@ add_library(
   cell/cell.c
   grid/grid.c
   unit/unit.c
+  progress-event/progress-event.c
   strategies/no-duplicates/no-duplicates.c
 )
 target_include_directories(applibs PUBLIC
@@ -14,6 +15,7 @@ target_include_directories(applibs PUBLIC
   cell
   grid
   unit
+  progress-event
   strategies/no-duplicates
 )
 

@@ -16,5 +16,5 @@ Cell* createCell(int row, int col, int value);
 void freeCell(Cell *cell);
 
 void printCellData(Cell *cell);
-void printCellNotes(Cell *cell);
+void printNotes(int notes[]);
 void printCellNotesDetailed(Cell *cell);
