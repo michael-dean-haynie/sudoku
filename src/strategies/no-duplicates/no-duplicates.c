@@ -6,6 +6,10 @@
 
 ProgressEvent* noDuplicatesStrat(Grid *grid_p, int row, int col) {
     Cell *cellToSolve = (*grid_p)[row][col];
+    if (cellToSolve->value != 0) {
+        return NULL; // do not process cells already solved
+    }
+
     Unit *units[3] = {
         getRowUnit(grid_p, row, col),
         getColumnUnit(grid_p, row, col),

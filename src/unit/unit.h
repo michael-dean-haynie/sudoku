@@ -1,3 +1,4 @@
+#pragma once
 #include "cell.h"
 #include "grid.h"
 

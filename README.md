@@ -25,7 +25,7 @@ ctest --test-dir build/test --output-on-failure
 
 Run the app:
 ``` sh
-build/src/app
+build/src/app < input/sudoku-hard.txt
 ```
 
 ## Reference Materials
