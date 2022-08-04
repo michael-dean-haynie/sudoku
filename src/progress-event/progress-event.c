@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include "grid.h"
 #include "progress-event.h"
 
 ProgressEvent* prepProgressEvent(Cell *cell_p, char *strat_p) {
@@ -35,4 +37,14 @@ void printProgressEvent(ProgressEvent *pe_p) {
     printNotes(pe_p->oldNotes);
     printf("  newNotes: ");
     printNotes(pe_p->newNotes);
+}
+
+void updateConsoleLive(Grid *grid_p) {
+    printGrid(grid_p);
+
+    // wait for 50 ms
+    struct timespec ts;
+    ts.tv_sec = 0;
+    ts.tv_nsec = 50 * 1000000;
+    nanosleep(&ts, NULL);
 }

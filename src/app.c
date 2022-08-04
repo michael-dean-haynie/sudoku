@@ -24,7 +24,8 @@ int main(void) {
             break; // stop if no progress was made on any cell
         }
     }
-    printGrid(grid_p);
+    // printGrid(grid_p);
+    printf("damn, i'm good\n");
 
     freeGrid(grid_p);
     return 0;

@@ -24,6 +24,7 @@ int executeStrategies(Grid *grid_p, int row, int col) {
             si--; // repeat this strat until no more progress is made
             printProgressEvent(pe);
             freeProgressEvent(pe);
+            updateConsoleLive(grid_p);
         }
 
         if (stratMadeProgress) {
