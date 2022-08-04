@@ -27,7 +27,8 @@ void freeProgressEvent(ProgressEvent *pe_p) {
 }
 
 void printProgressEvent(ProgressEvent *pe_p) {
-    printf("progress made in cell at (%d,%d):\n", pe_p->row, pe_p->col);
+    printf("progress made on cell at (%d,%d):\n", pe_p->row, pe_p->col);
+    printf("  strategy: %s\n", pe_p->strat_p);
     printf("  oldValue: %d\n", pe_p->oldValue);
     printf("  newValue: %d\n", pe_p->newValue);
     printf("  oldNotes: ");
