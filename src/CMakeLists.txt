@@ -3,12 +3,15 @@
 ###################
 add_library(
   applibs
-  add.h
-  add.c
-  subtract.h
   subtract.c
+  cell/cell.c
+  grid/grid.c
 )
-target_include_directories(applibs PUBLIC . )
+target_include_directories(applibs PUBLIC
+  .
+  cell
+  grid
+)
 
 ###################
 # app target 

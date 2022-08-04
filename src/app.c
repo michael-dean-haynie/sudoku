@@ -1,7 +1,13 @@
 #include <stdio.h>
-#include "subtract.h"
+#include "grid.h"
 
 int main(void) {
-    printf("5 - 1 = %d\n", subtract(5,1));
+    printf("the app is running :)\n");
+
+    Grid *grid_p = loadGridFromStdin();
+    printGridData(grid_p);
+    printGrid(grid_p);
+
+    freeGrid(grid_p);
     return 0;
 }
