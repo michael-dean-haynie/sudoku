@@ -64,7 +64,7 @@ void printNoteOrValue(Grid *grid_p, int gridRow, int gridCol, int noteRow, int n
         if (noteIndex == 5) { // center
             printf("%d", cell->value);
         } else {
-            printf(" ");
+            printf(".");
         }
     } else if (cell->notes[noteIndex]) {
         printf("%d", noteIndex);
