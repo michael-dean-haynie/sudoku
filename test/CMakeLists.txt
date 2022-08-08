@@ -15,9 +15,7 @@ enable_testing()
 
 add_executable(
   tests
-  hello_test.cc
-  my_test.cc
-  subtract_test.cc
+  strategies/naked-single_test.cc
 )
 target_link_libraries(
   tests

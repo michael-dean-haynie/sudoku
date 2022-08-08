@@ -3,7 +3,6 @@
 ###################
 add_library(
   applibs
-  subtract.c
   cell/cell.c
   grid/grid.c
   unit/unit.c
