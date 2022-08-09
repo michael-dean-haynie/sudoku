@@ -48,3 +48,22 @@ void updateConsoleLive(Grid *grid_p) {
     ts.tv_nsec = 50 * 1000000;
     nanosleep(&ts, NULL);
 }
+
+int progressEventsAreEqual(ProgressEvent *pe1, ProgressEvent *pe2) {
+    for (int i = 0; i <= MAX_VAL; i++) {
+        if (pe1->oldNotes[i] != pe2->oldNotes[i]) {
+            return 0;
+        }
+
+        if (pe1->newNotes[i] != pe2->newNotes[i]) {
+            return 0;
+        }
+    }
+
+    return
+        strcmp(pe1->strat_p, pe2->strat_p) == 0
+        && pe1->row == pe2->row
+        && pe1->col == pe2->col
+        && pe1->oldValue == pe2->oldValue
+        && pe1->newValue == pe2->newValue;
+}

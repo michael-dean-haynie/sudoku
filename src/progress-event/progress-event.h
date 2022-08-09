@@ -17,3 +17,4 @@ void updateProgressEvent(ProgressEvent *pe_p, Cell *cell_p);
 void freeProgressEvent(ProgressEvent *pe_p);
 void printProgressEvent(ProgressEvent *pe_p);
 void updateConsoleLive(Grid *grid_p);
+int progressEventsAreEqual(ProgressEvent *pe1, ProgressEvent *pe2);
