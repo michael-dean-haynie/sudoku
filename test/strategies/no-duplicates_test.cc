@@ -33,8 +33,6 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
 
     // act
     ProgressEvent *actual = noDuplicatesStrat(&grid, 0, 0);
-    printProgressEvent(&expected);
-    printProgressEvent(actual);
 
     // assert
     ASSERT_TRUE(progressEventsAreEqual(&expected, actual));
@@ -66,8 +64,6 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfColHasValue) {
 
     // act
     ProgressEvent *actual = noDuplicatesStrat(grid, 0, 0);
-    printProgressEvent(&expected);
-    printProgressEvent(actual);
 
     // assert
     ASSERT_TRUE(progressEventsAreEqual(&expected, actual));
@@ -104,5 +100,21 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfBlockHasValue) {
 
     // assert
     ASSERT_TRUE(progressEventsAreEqual(&expected, actual));
+
+}
+
+TEST(NoDuplictesTests, ShouldReturnNullIfNoProgressWasMade) {
+    // arrange
+    Grid *grid = createEmptyGrid();
+    (*grid)[0][0] = createCell(0, 0, 0); // cell to solve
+    (*grid)[3][3] = createCell(3, 3, 5); // cell with value (not in cell-to-solve's units)
+
+    ProgressEvent *expected = NULL;
+
+    // act
+    ProgressEvent *actual = noDuplicatesStrat(grid, 0, 0);
+
+    // assert
+    ASSERT_EQ(expected, actual);
 
 }
