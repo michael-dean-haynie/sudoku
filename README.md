@@ -23,6 +23,12 @@ Run the tests:
 ctest --test-dir build/test --output-on-failure
 ```
 
+Debug the tests with gdb:
+```
+gdb build/test/tests
+(gdb) run
+```
+
 Run the app:
 ``` sh
 build/src/app < input/sudoku-hard.txt

@@ -16,6 +16,7 @@ enable_testing()
 add_executable(
   tests
   strategies/naked-single_test.cc
+  strategies/no-duplicates_test.cc
 )
 target_link_libraries(
   tests

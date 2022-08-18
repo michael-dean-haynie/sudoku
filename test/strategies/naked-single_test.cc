@@ -20,7 +20,7 @@ TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellIsNakedSingle) {
     expected.col = 0;
     expected.oldValue = 0;
     expected.newValue = 1;
-    for (int i = 0; i < MAX_VAL; i++) {
+    for (int i = 0; i <= MAX_VAL; i++) {
         // set 1 to true and the rest to false
         expected.oldNotes[i] = (i == 1) ? 1 : 0;
         expected.newNotes[i] = (i == 1) ? 1 : 0;

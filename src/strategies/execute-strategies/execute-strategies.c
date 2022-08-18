@@ -16,12 +16,10 @@ int executeStrategies(Grid *grid_p, int row, int col) {
     int cellMadeProgress = 0;
     int stratMadeProgress = 0;
     for (int si = 0; si < stratCount; si++) {
-        // TODO: free
         ProgressEvent* pe = strats[si](grid_p, row, col);
         if (pe != NULL) {
             stratMadeProgress = 1;
             cellMadeProgress = 1;
-            si--; // repeat this strat until no more progress is made
             printProgressEvent(pe);
             freeProgressEvent(pe);
             updateConsoleLive(grid_p);
