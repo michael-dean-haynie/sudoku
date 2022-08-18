@@ -4,7 +4,7 @@ extern "C" {
     #include "no-duplicates.h"
 }
 
-TEST(NoDuplictesTest, ShouldReturnProgressEventIfRowHasValue) {
+TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
     // arrange
     Grid grid;
     for(int col = 0; col < ROWS; col++) {
