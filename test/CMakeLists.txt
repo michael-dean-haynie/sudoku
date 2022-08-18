@@ -17,6 +17,10 @@ add_executable(
   tests
   strategies/naked-single_test.cc
   strategies/no-duplicates_test.cc
+  helpers/test-helpers.c
+)
+target_include_directories(tests PUBLIC
+  helpers
 )
 target_link_libraries(
   tests
