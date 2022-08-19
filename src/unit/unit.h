@@ -12,7 +12,7 @@ typedef Cell *(Unit[UNIT_SIZE]);
 void freeUnit(Unit *unit_p);
 
 // Unit-related functions
-Unit *getRowUnit(Grid *grid_p, int row, int col);
+Unit *getRowUnit(Grid *grid_p, int row, __attribute__((unused)) int col);
 
 Unit *getColumnUnit(Grid *grid_p, int row, int col);
 

@@ -5,7 +5,7 @@ void freeUnit(Unit *unit_p) {
     free(unit_p);
 }
 
-Unit *getRowUnit(Grid *grid_p, int row, int col) {
+Unit *getRowUnit(Grid *grid_p, int row, __attribute__((unused)) int col) {
     Unit *unit_p = malloc(sizeof(Unit));
     for (int c = 0; c < COLS; c++) {
         (*unit_p)[c] = (*grid_p)[row][c];

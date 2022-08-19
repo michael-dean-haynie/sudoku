@@ -18,6 +18,6 @@ void freeCell(Cell *cell);
 
 void printCellData(Cell *cell);
 
-void printNotes(int notes[]);
+void printNotes(const int notes[]);
 
 void printCellNotesDetailed(Cell *cell);

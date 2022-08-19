@@ -109,7 +109,7 @@ TEST(NoDuplictesTests, ShouldReturnNullIfNoProgressWasMade) {
     (*grid)[0][0] = createCell(0, 0, 0); // cell to solve
     (*grid)[3][3] = createCell(3, 3, 5); // cell with value (not in cell-to-solve's units)
 
-    ProgressEvent *expected = NULL;
+    ProgressEvent *expected = nullptr;
 
     // act
     ProgressEvent *actual = noDuplicatesStrat(grid, 0, 0);

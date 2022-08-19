@@ -33,7 +33,7 @@ void printCellData(Cell *cell) {
     // printCellNotesDetailed(cell);
 }
 
-void printNotes(int notes[]) {
+void printNotes(const int notes[]) {
     for (int i = 1; i <= MAX_VAL; i++) {
         int note = notes[i];
         if (note == 1) {
