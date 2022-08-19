@@ -1,5 +1,7 @@
 # Sudoku
 
+Solves sudoke puzzles
+
 ## Build / Test / Run
 
 [cmake](https://cmake.org/install/) must be installed.
@@ -40,6 +42,11 @@ Run the app:
 ``` sh
 build/src/app < input/sudoku-hard.txt
 ```
+
+## CLion
+
+This project was developed using CLion IDE and the .idea files are included.
+However, CLion is not required.
 
 ## Reference Materials
 
