@@ -4,23 +4,23 @@
 #include "no-duplicates.h"
 #include "unit.h"
 
-ProgressEvent* noDuplicatesStrat(Grid *grid_p, int row, int col) {
+ProgressEvent *noDuplicatesStrat(Grid *grid_p, int row, int col) {
     Cell *cellToSolve = (*grid_p)[row][col];
     if (cellToSolve->value != 0) {
         return NULL; // do not process cells already solved
     }
 
     Unit *units[3] = {
-        getRowUnit(grid_p, row, col),
-        getColumnUnit(grid_p, row, col),
-        getBlockUnit(grid_p, row, col),
+            getRowUnit(grid_p, row, col),
+            getColumnUnit(grid_p, row, col),
+            getBlockUnit(grid_p, row, col),
     };
 
-    for (int i = 0; i < 3; i ++) {
+    for (int i = 0; i < 3; i++) {
         Unit *unit = units[i];
-        for(int ci = 0; ci < UNIT_SIZE; ci++) { // cell index
+        for (int ci = 0; ci < UNIT_SIZE; ci++) { // cell index
             Cell *cell = (*unit)[ci];
-            if(cell->row == row && cell->col == col) {
+            if (cell->row == row && cell->col == col) {
                 continue; // don't compare target cell against itself
             }
             if (cell->value && cellToSolve->notes[cell->value]) {

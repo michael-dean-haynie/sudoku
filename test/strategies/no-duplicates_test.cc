@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-    #include "no-duplicates.h"
-    #include "test-helpers.h"
+#include "no-duplicates.h"
+#include "test-helpers.h"
 }
 
 TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {

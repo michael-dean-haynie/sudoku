@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-    #include "naked-single.h"
-    #include "cell.h"
+#include "naked-single.h"
+#include "cell.h"
 }
 
 TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellIsNakedSingle) {

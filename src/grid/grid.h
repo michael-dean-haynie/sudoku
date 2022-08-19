@@ -1,4 +1,5 @@
 #pragma once
+
 #include "cell.h"
 
 #define ROWS 9 // number of rows in a grid
@@ -8,9 +9,12 @@
 typedef Cell *(Grid[ROWS][COLS]);
 
 // Grid-related functions
-Grid* loadGridFromStdin();
+Grid *loadGridFromStdin();
+
 void freeGrid(Grid *grid);
 
 void printGrid(Grid *grid_p);
+
 void printGridData(Grid *grid_p);
+
 void printNoteOrValue(Grid *grid_p, int gridRow, int gridCol, int noteRow, int noteCol);

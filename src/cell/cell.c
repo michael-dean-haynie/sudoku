@@ -3,18 +3,18 @@
 #include "cell.h"
 
 
-Cell* createCell(int row, int col, int value) {
-    Cell *cell = (Cell*) malloc(sizeof(Cell));
+Cell *createCell(int row, int col, int value) {
+    Cell *cell = (Cell *) malloc(sizeof(Cell));
     cell->row = row;
     cell->col = col;
     cell->value = value;
 
     // initialize notes
-    for(int n = 0; n <= MAX_VAL; n++) {
+    for (int n = 0; n <= MAX_VAL; n++) {
         if (value != 0) {
             cell->notes[n] = (n == value) ? 1 : 0;
         } else {
-            cell->notes[n] = (n == 0 ) ? 0 : 1;
+            cell->notes[n] = (n == 0) ? 0 : 1;
         }
     }
 

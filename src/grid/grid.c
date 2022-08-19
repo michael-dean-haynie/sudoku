@@ -3,11 +3,11 @@
 #include "grid.h"
 #include "cell.h"
 
-Grid* loadGridFromStdin() {
+Grid *loadGridFromStdin() {
     Grid *grid_p = malloc(sizeof(Grid));
     for (int row = 0; row < ROWS; row++) {
         for (int col = 0; col < COLS; col++) {
-            char strVal[2] = { fgetc(stdin), '\0' };
+            char strVal[2] = {fgetc(stdin), '\0'};
             int intVal = atoi(strVal);
             if (intVal < 0 || intVal > 9) {
                 intVal = 0;

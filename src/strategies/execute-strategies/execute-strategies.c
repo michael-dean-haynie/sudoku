@@ -6,9 +6,9 @@
 
 int executeStrategies(Grid *grid_p, int row, int col, int slowMode) {
     // initialize an array of strategy functions that return ProgressEvent*
-    ProgressEvent* (*strats[])(Grid *grid_p, int row, int col) = {
-        nakedSingleStrat,
-        noDuplicatesStrat
+    ProgressEvent *(*strats[])(Grid *grid_p, int row, int col) = {
+            nakedSingleStrat,
+            noDuplicatesStrat
     };
 
     int stratCount = sizeof strats / sizeof strats[0];
@@ -16,12 +16,12 @@ int executeStrategies(Grid *grid_p, int row, int col, int slowMode) {
     int cellMadeProgress = 0;
     int stratMadeProgress = 0;
     for (int si = 0; si < stratCount; si++) {
-        ProgressEvent* pe = strats[si](grid_p, row, col);
+        ProgressEvent *pe = strats[si](grid_p, row, col);
         if (pe != NULL) {
             stratMadeProgress = 1;
             cellMadeProgress = 1;
 
-            if(slowMode) {
+            if (slowMode) {
                 printProgressEvent(pe);
                 updateConsoleLive(grid_p);
             }

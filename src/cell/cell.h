@@ -12,9 +12,12 @@ typedef struct Cell {
 } Cell;
 
 // Cell-related functions
-Cell* createCell(int row, int col, int value);
+Cell *createCell(int row, int col, int value);
+
 void freeCell(Cell *cell);
 
 void printCellData(Cell *cell);
+
 void printNotes(int notes[]);
+
 void printCellNotesDetailed(Cell *cell);

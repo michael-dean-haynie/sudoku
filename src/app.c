@@ -6,24 +6,24 @@
 int main(int argc, char *argv[]) {
     // parse arguments
     int slowMode = 0;
-    if(argc > 1) {
-        for(int i = 1; i < argc; i++) {
-           if(strcmp(argv[i], "--slow") == 0) {
-               slowMode = 1;
-           }
+    if (argc > 1) {
+        for (int i = 1; i < argc; i++) {
+            if (strcmp(argv[i], "--slow") == 0) {
+                slowMode = 1;
+            }
         }
     }
+
 
     Grid *grid_p = loadGridFromStdin();
 
     printf("\nInitial State:\n");
     printGrid(grid_p);
 
-    while(1) {
+    while (1) {
         int progressWasMade = 0;
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
-                Cell *cell = (*grid_p)[row][col];
                 if (executeStrategies(grid_p, row, col, slowMode)) {
                     progressWasMade = 1;
                 }

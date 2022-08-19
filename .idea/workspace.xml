@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakePresetLoader"><![CDATA[{
   "useNewFormat": true
 }]]></component>
@@ -24,10 +27,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="147a7656-a14b-499a-bb7d-7cec7f41d0f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/michael.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cell/cell.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/cell/cell.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cell/cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/cell/cell.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grid/grid.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/grid/grid.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grid/grid.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/grid/grid.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progress-event/progress-event.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/progress-event/progress-event.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progress-event/progress-event.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/progress-event/progress-event.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategies/naked-single/naked-single.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/naked-single/naked-single.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategies/naked-single/naked-single.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/naked-single/naked-single.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategies/no-duplicates/no-duplicates.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/no-duplicates/no-duplicates.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategies/no-duplicates/no-duplicates.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/no-duplicates/no-duplicates.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit/unit.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/unit/unit.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit/unit.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/unit/unit.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/helpers/test-helpers.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/helpers/test-helpers.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,15 +82,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "cf.advertisement.text.has.clang-format": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "last_opened_file_path": "/Users/michael/code/mine/sudoku",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
-  <component name="RunManager" selected="Shell Script.Solve Hard Puzzle Slow">
+  <component name="RunManager" selected="Shell Script.Solve Easy Puzzle">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -192,7 +218,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660939533901</updated>
-      <workItem from="1660939537816" duration="3154000" />
+      <workItem from="1660939537816" duration="8522000" />
     </task>
     <servers />
   </component>
@@ -209,5 +235,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

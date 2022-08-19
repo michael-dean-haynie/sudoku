@@ -5,7 +5,7 @@
 #include "grid.h"
 #include "progress-event.h"
 
-ProgressEvent* prepProgressEvent(Cell *cell_p, char *strat_p) {
+ProgressEvent *prepProgressEvent(Cell *cell_p, char *strat_p) {
     ProgressEvent *pe_p = malloc(sizeof(ProgressEvent));
     pe_p->strat_p = strat_p;
     pe_p->row = cell_p->row;
@@ -61,9 +61,9 @@ int progressEventsAreEqual(ProgressEvent *pe1, ProgressEvent *pe2) {
     }
 
     return
-        strcmp(pe1->strat_p, pe2->strat_p) == 0
-        && pe1->row == pe2->row
-        && pe1->col == pe2->col
-        && pe1->oldValue == pe2->oldValue
-        && pe1->newValue == pe2->newValue;
+            strcmp(pe1->strat_p, pe2->strat_p) == 0
+            && pe1->row == pe2->row
+            && pe1->col == pe2->col
+            && pe1->oldValue == pe2->oldValue
+            && pe1->newValue == pe2->newValue;
 }

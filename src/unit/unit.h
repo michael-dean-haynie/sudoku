@@ -1,4 +1,5 @@
 #pragma once
+
 #include "cell.h"
 #include "grid.h"
 
@@ -11,8 +12,10 @@ typedef Cell *(Unit[UNIT_SIZE]);
 void freeUnit(Unit *unit_p);
 
 // Unit-related functions
-Unit* getRowUnit(Grid *grid_p, int row, int col);
-Unit* getColumnUnit(Grid *grid_p, int row, int col);
-Unit* getBlockUnit(Grid *grid_p, int row, int col);
+Unit *getRowUnit(Grid *grid_p, int row, int col);
+
+Unit *getColumnUnit(Grid *grid_p, int row, int col);
+
+Unit *getBlockUnit(Grid *grid_p, int row, int col);
 
 void printUnitData(Unit *unit_p);

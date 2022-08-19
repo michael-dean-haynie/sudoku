@@ -5,7 +5,7 @@ void freeUnit(Unit *unit_p) {
     free(unit_p);
 }
 
-Unit* getRowUnit(Grid *grid_p, int row, int col) {
+Unit *getRowUnit(Grid *grid_p, int row, int col) {
     Unit *unit_p = malloc(sizeof(Unit));
     for (int c = 0; c < COLS; c++) {
         (*unit_p)[c] = (*grid_p)[row][c];
@@ -13,7 +13,7 @@ Unit* getRowUnit(Grid *grid_p, int row, int col) {
     return unit_p;
 }
 
-Unit* getColumnUnit(Grid *grid_p, int row, int col) {
+Unit *getColumnUnit(Grid *grid_p, int row, int col) {
     Unit *unit_p = malloc(sizeof(Unit));
     for (int r = 0; r < COLS; r++) {
         (*unit_p)[r] = (*grid_p)[r][col];
@@ -21,7 +21,7 @@ Unit* getColumnUnit(Grid *grid_p, int row, int col) {
     return unit_p;
 }
 
-Unit* getBlockUnit(Grid *grid_p, int row, int col) {
+Unit *getBlockUnit(Grid *grid_p, int row, int col) {
     Unit *unit_p = malloc(sizeof(Unit));
     int startRow = (row / 3) * 3;
     int startCol = (col / 3) * 3;
