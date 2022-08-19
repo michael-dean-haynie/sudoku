@@ -4,7 +4,7 @@
 #include "naked-single.h"
 #include "no-duplicates.h"
 
-int executeStrategies(Grid *grid_p, int row, int col) {
+int executeStrategies(Grid *grid_p, int row, int col, int slowMode) {
     // initialize an array of strategy functions that return ProgressEvent*
     ProgressEvent* (*strats[])(Grid *grid_p, int row, int col) = {
         nakedSingleStrat,
@@ -20,9 +20,13 @@ int executeStrategies(Grid *grid_p, int row, int col) {
         if (pe != NULL) {
             stratMadeProgress = 1;
             cellMadeProgress = 1;
-            printProgressEvent(pe);
+
+            if(slowMode) {
+                printProgressEvent(pe);
+                updateConsoleLive(grid_p);
+            }
+
             freeProgressEvent(pe);
-            updateConsoleLive(grid_p);
         }
 
         if (stratMadeProgress) {

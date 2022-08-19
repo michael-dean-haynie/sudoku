@@ -1,12 +1,22 @@
 #include <stdio.h>
+#include <string.h>
 #include "grid.h"
-#include "unit.h"
 #include "execute-strategies.h"
 
-int main(void) {
-    printf("the app is running :)\n");
+int main(int argc, char *argv[]) {
+    // parse arguments
+    int slowMode = 0;
+    if(argc > 1) {
+        for(int i = 1; i < argc; i++) {
+           if(strcmp(argv[i], "--slow") == 0) {
+               slowMode = 1;
+           }
+        }
+    }
 
     Grid *grid_p = loadGridFromStdin();
+
+    printf("\nInitial State:\n");
     printGrid(grid_p);
 
     while(1) {
@@ -14,7 +24,7 @@ int main(void) {
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
                 Cell *cell = (*grid_p)[row][col];
-                if (executeStrategies(grid_p, row, col)) {
+                if (executeStrategies(grid_p, row, col, slowMode)) {
                     progressWasMade = 1;
                 }
             }
@@ -24,8 +34,9 @@ int main(void) {
             break; // stop if no progress was made on any cell
         }
     }
-    // printGrid(grid_p);
-    printf("damn, i'm good\n");
+
+    printf("\nFinal State:\n");
+    printGrid(grid_p);
 
     freeGrid(grid_p);
     return 0;
