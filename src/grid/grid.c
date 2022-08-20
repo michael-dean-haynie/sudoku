@@ -80,3 +80,22 @@ void printGridData(Grid *grid_p) {
         }
     }
 }
+
+void printPercentComplete(Grid *grid_p) {
+    float maxCandidates = 9*9*9; // 0% complete: candidates would be 9*9*9 (729)
+    float minCandidates = 9*9; // 100% complete: candidates would be 9*9 (81)
+    float denominator = maxCandidates - minCandidates;
+    float numerator = 0;
+    for (int row = 0; row < ROWS; row++) {
+        for (int col = 0; col < COLS; col++) {
+            for(int note = 1; note <= MAX_VAL; note++) {
+                if ((*grid_p)[row][col]->notes[note] == 1) {
+                    numerator++;
+                }
+            }
+        }
+    }
+    numerator -= minCandidates;
+    float percentage = 100 - (numerator / denominator * 100);
+    printf("%.2f%% complete\n", percentage);
+}

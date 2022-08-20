@@ -18,3 +18,5 @@ void printGrid(Grid *grid_p);
 void printGridData(Grid *grid_p);
 
 void printNoteOrValue(Grid *grid_p, int gridRow, int gridCol, int noteRow, int noteCol);
+
+void printPercentComplete(Grid *grid_p);

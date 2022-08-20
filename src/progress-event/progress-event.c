@@ -41,6 +41,7 @@ void printProgressEvent(ProgressEvent *pe_p) {
 
 void updateConsoleLive(Grid *grid_p) {
     printGrid(grid_p);
+    printPercentComplete(grid_p);
 
     // wait for 50 ms
     struct timespec ts;

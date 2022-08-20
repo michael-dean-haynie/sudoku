@@ -1,8 +1,9 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-#include "naked-single.h"
-#include "cell.h"
+    #include "naked-single.h"
+    #include "cell.h"
+    #include "test-helpers.h"
 }
 
 TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellIsNakedSingle) {
@@ -53,3 +54,8 @@ TEST(NakedSingleTests, ShouldReturnNullIfCellHasMoreThan1Candidate) {
     ProgressEvent *actual = nakedSingleStrat(&grid, 0, 0);
     EXPECT_EQ(expected, actual);
 }
+
+//TEST(Playground, Playground1) {
+//    Grid *grid = createEmptyGrid();
+//    printPercentComplete(grid);
+//}
