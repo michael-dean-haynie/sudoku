@@ -6,7 +6,7 @@ extern "C" {
     #include "test-helpers.h"
 }
 
-TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellIsNakedSingle) {
+TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellHasNakedSingle) {
     Grid grid;
     grid[0][0] = createCell(0, 0, 0);
     // set notes 2-9 to false, and leave 1 as true.
@@ -16,7 +16,7 @@ TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellIsNakedSingle) {
 
     // prepare expected value
     ProgressEvent expected;
-    expected.strat_p = strdup("nakedSingleStrat");
+    expected.strategyName = strdup("nakedSingleStrat");
     expected.row = 0;
     expected.col = 0;
     expected.oldValue = 0;
@@ -29,7 +29,7 @@ TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellIsNakedSingle) {
 
     // get actual value and run assertions
     ProgressEvent *actual_p = nakedSingleStrat(&grid, 0, 0);
-    EXPECT_TRUE(progressEventsAreEqual(&expected, actual_p));
+    ASSERT_TRUE(progressEventsAreEqual(&expected, actual_p));
 }
 
 
@@ -39,7 +39,7 @@ TEST(NakedSingleTests, ShouldReturnNullIfCellValueIsNonZero) {
 
     ProgressEvent *expected = nullptr;
     ProgressEvent *actual = nakedSingleStrat(&grid, 0, 0);
-    EXPECT_EQ(expected, actual);
+    ASSERT_EQ(expected, actual);
 }
 
 TEST(NakedSingleTests, ShouldReturnNullIfCellHasMoreThan1Candidate) {
@@ -52,7 +52,7 @@ TEST(NakedSingleTests, ShouldReturnNullIfCellHasMoreThan1Candidate) {
 
     ProgressEvent *expected = nullptr;
     ProgressEvent *actual = nakedSingleStrat(&grid, 0, 0);
-    EXPECT_EQ(expected, actual);
+    ASSERT_EQ(expected, actual);
 }
 
 //TEST(Playground, Playground1) {

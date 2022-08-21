@@ -8,8 +8,9 @@ add_library(
         unit/unit.c
         progress-event/progress-event.c
         strategies/execute-strategies/execute-strategies.c
-        strategies/naked-single/naked-single.c
         strategies/no-duplicates/no-duplicates.c
+        strategies/naked-single/naked-single.c
+        strategies/hidden-single/hidden-single.c
 )
 target_include_directories(applibs PUBLIC
         .
@@ -18,9 +19,10 @@ target_include_directories(applibs PUBLIC
         unit
         progress-event
         strategies/execute-strategies
-        strategies/naked-single
         strategies/no-duplicates
-        )
+        strategies/naked-single
+        strategies/hidden-single
+)
 
 ###################
 # app target 

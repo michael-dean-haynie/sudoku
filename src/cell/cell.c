@@ -60,3 +60,19 @@ void printCellNotesDetailed(Cell *cell) {
     }
     printf("\n");
 }
+
+void setCellValue(Cell *cell, int value) {
+    cell->value = value;
+    for (int i = 0; i <= MAX_VAL; ++i) {
+        cell->notes[i] = 0;
+    }
+    cell->notes[value] = 1;
+}
+
+void freeCellList(CellList *cellList) {
+    // free list of pointers
+    free(cellList->items);
+
+    // free CellList, itself
+    free(cellList);
+}

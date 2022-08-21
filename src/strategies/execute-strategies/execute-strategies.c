@@ -1,14 +1,16 @@
 #include <stdlib.h>
 #include "execute-strategies.h"
 #include "progress-event.h"
-#include "naked-single.h"
 #include "no-duplicates.h"
+#include "naked-single.h"
+#include "hidden-single.h"
 
 int executeStrategies(Grid *grid_p, int row, int col, int slowMode) {
     // initialize an array of strategy functions that return ProgressEvent*
     ProgressEvent *(*strats[])(Grid *grid_p, int row, int col) = {
+            noDuplicatesStrat,
             nakedSingleStrat,
-            noDuplicatesStrat
+            hiddenSingleStrat,
     };
 
     int stratCount = sizeof strats / sizeof strats[0];

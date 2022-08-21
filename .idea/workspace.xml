@@ -31,11 +31,19 @@
   <component name="ChangeListManager">
     <list default="true" id="147a7656-a14b-499a-bb7d-7cec7f41d0f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grid/grid.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/grid/grid.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grid/grid.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/grid/grid.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cell/cell.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/cell/cell.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cell/cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/cell/cell.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progress-event/progress-event.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/progress-event/progress-event.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progress-event/progress-event.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/progress-event/progress-event.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit/unit.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/unit/unit.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit/unit.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/unit/unit.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/helpers/test-helpers.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/helpers/test-helpers.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/helpers/test-helpers.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/helpers/test-helpers.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +61,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="NamedScopeManager">
-    <scope name="Unnamed" pattern="file[sudoku]:src//*||file[sudoku]:test//*" />
+    <scope name="src and test" pattern="file[sudoku]:src//*||file[sudoku]:test//*" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
@@ -64,37 +72,67 @@
     <option name="minorVersion" value="2.1" />
   </component>
   <component name="ProjectId" id="2DaaE4m8rDoSjgYGHVj9bNQjeCV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.advertisement.text.has.clang-format&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/michael/code/mine/sudoku&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.advertisement.text.has.clang-format": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/Users/michael/code/mine/sudoku/test/unit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Debugger"
   }
-}</component>
-  <component name="RunManager" selected="Shell Script.Solve Hard Puzzle Slow">
-    <configuration name="NakedSingleTests.ShouldReturnNullIfCellHasMoreThan1Candidate" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="NakedSingleTests" TEST_METHOD="ShouldReturnNullIfCellHasMoreThan1Candidate" TEST_MODE="SUITE_TEST">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/unit" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Google Test.tests">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HiddenSingleTests.ShouldReturnNullIfCellDoesNotHaveHiddenSingle" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="HiddenSingleTests" TEST_METHOD="ShouldReturnNullIfCellDoesNotHaveHiddenSingle" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Playground.Playground1" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="Playground" TEST_METHOD="Playground1" TEST_MODE="SUITE_TEST">
+    <configuration name="HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForBlock" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="HiddenSingleTests" TEST_METHOD="ShouldReturnProgressEventIfCellIsHasHiddenSingleForBlock" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="HiddenSingleTests" TEST_METHOD="ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="HiddenSingleTests" TEST_METHOD="ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnitTests.GetUnitCandidatesForValueShouldReturnSingleCell" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="UnitTests" TEST_METHOD="GetUnitCandidatesForValueShouldReturnSingleCell" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -104,6 +142,16 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Debug Easy Puzzle" type="CMakeRunConfiguration" factoryName="Application" folderName="Custom" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/input/sudoku.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="app">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Debug Hard Puzzle" type="CMakeRunConfiguration" factoryName="Application" folderName="Custom" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/input/sudoku-hard.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="app">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="app" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="app">
@@ -136,73 +184,9 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="clean" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/build/_deps/googletest-subbuild/Makefile" target="clean" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
-      <method v="2" />
-    </configuration>
-    <configuration name="Solve Easy Puzzle Slow" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="clear &amp;&amp; build/src/app --slow &lt; input/sudoku.txt" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="false" />
-      <option name="EXECUTE_SCRIPT_FILE" value="false" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="Solve Easy Puzzle" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="clear &amp;&amp; build/src/app &lt; input/sudoku.txt" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="false" />
-      <option name="EXECUTE_SCRIPT_FILE" value="false" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="Solve Hard Puzzle Slow" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="clear &amp;&amp; build/src/app --slow &lt; input/sudoku-hard.txt" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="false" />
-      <option name="EXECUTE_SCRIPT_FILE" value="false" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="Solve Hard Puzzle" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="clear &amp;&amp; build/src/app &lt; input/sudoku-hard.txt" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="false" />
-      <option name="EXECUTE_SCRIPT_FILE" value="false" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="CMake Application.Debug Easy Puzzle" />
+      <item itemvalue="CMake Application.Debug Hard Puzzle" />
       <item itemvalue="CMake Application.gmock" />
       <item itemvalue="CMake Application.gmock_main" />
       <item itemvalue="CMake Application.gtest" />
@@ -210,19 +194,19 @@
       <item itemvalue="CMake Application.app" />
       <item itemvalue="CMake Application.applibs" />
       <item itemvalue="Google Test.tests" />
-      <item itemvalue="Google Test.NakedSingleTests.ShouldReturnNullIfCellHasMoreThan1Candidate" />
-      <item itemvalue="Google Test.Playground.Playground1" />
-      <item itemvalue="Makefile Target.clean" />
-      <item itemvalue="Shell Script.Solve Easy Puzzle" />
-      <item itemvalue="Shell Script.Solve Easy Puzzle Slow" />
-      <item itemvalue="Shell Script.Solve Hard Puzzle" />
-      <item itemvalue="Shell Script.Solve Hard Puzzle Slow" />
+      <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnNullIfCellDoesNotHaveHiddenSingle" />
+      <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForBlock" />
+      <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" />
+      <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow" />
+      <item itemvalue="Google Test.UnitTests.GetUnitCandidatesForValueShouldReturnSingleCell" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Google Test.Playground.Playground1" />
-        <item itemvalue="Google Test.NakedSingleTests.ShouldReturnNullIfCellHasMoreThan1Candidate" />
-        <item itemvalue="Makefile Target.clean" />
+        <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnNullIfCellDoesNotHaveHiddenSingle" />
+        <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForBlock" />
+        <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" />
+        <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow" />
+        <item itemvalue="Google Test.UnitTests.GetUnitCandidatesForValueShouldReturnSingleCell" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +226,7 @@
       <workItem from="1660952961743" duration="436000" />
       <workItem from="1660953494243" duration="1642000" />
       <workItem from="1660956169355" duration="2013000" />
-      <workItem from="1660958421496" duration="1729000" />
+      <workItem from="1660958421496" duration="27520000" />
     </task>
     <servers />
   </component>

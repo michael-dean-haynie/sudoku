@@ -15,7 +15,7 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
     grid[0][8] = createCell(0, 8, 5); // cell with value
 
     ProgressEvent expected;
-    expected.strat_p = strdup("noDuplicatesStrat");
+    expected.strategyName = strdup("noDuplicatesStrat");
     expected.row = 0;
     expected.col = 0;
     expected.oldValue = 0;
@@ -46,7 +46,7 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfColHasValue) {
     (*grid)[8][0] = createCell(8, 0, 5); // cell with value
 
     ProgressEvent expected;
-    expected.strat_p = strdup("noDuplicatesStrat");
+    expected.strategyName = strdup("noDuplicatesStrat");
     expected.row = 0;
     expected.col = 0;
     expected.oldValue = 0;
@@ -77,7 +77,7 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfBlockHasValue) {
     (*grid)[2][2] = createCell(2, 2, 5); // cell with value
 
     ProgressEvent expected;
-    expected.strat_p = strdup("noDuplicatesStrat");
+    expected.strategyName = strdup("noDuplicatesStrat");
     expected.row = 0;
     expected.col = 0;
     expected.oldValue = 0;
@@ -95,8 +95,6 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfBlockHasValue) {
 
     // act
     ProgressEvent *actual = noDuplicatesStrat(grid, 0, 0);
-    printProgressEvent(&expected);
-    printProgressEvent(actual);
 
     // assert
     ASSERT_TRUE(progressEventsAreEqual(&expected, actual));

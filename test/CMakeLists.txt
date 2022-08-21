@@ -15,9 +15,12 @@ enable_testing()
 
 add_executable(
         tests
-        strategies/naked-single_test.cc
-        strategies/no-duplicates_test.cc
         helpers/test-helpers.c
+        helpers/assertion-helpers.cpp
+        strategies/no-duplicates_test.cc
+        strategies/naked-single_test.cc
+        strategies/hidden-single_test.cc
+        unit/unit_test.cc
 )
 target_include_directories(tests PUBLIC
         helpers

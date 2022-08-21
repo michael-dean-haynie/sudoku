@@ -4,7 +4,7 @@
 #include "grid.h"
 
 typedef struct ProgressEvent {
-    char *strat_p;
+    char *strategyName;
     int row;
     int col;
     int oldValue;

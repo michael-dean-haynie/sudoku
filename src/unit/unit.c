@@ -39,3 +39,23 @@ void printUnitData(Unit *unit_p) {
         printCellData((*unit_p)[i]);
     }
 }
+
+CellList *getUnitCandidatesForValue(Unit *unit_p, int value) {
+    int candidates[UNIT_SIZE];
+    int ci = 0;
+
+    for (int ui = 0; ui < UNIT_SIZE; ++ui) {
+      Cell *cell = (*unit_p)[ui];
+      if (cell->notes[value] == 1) {
+          candidates[ci++] = ui;
+      }
+    }
+
+    CellList *cellList = (CellList*) malloc(sizeof(CellList));
+    cellList->length = ci;
+    cellList->items = (Cell**) malloc(ci * sizeof(Cell*));
+    for (int i = 0; i < ci; ++i) {
+        cellList->items[i] = (*unit_p)[candidates[i]];
+    }
+    return cellList;
+}

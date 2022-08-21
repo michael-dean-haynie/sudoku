@@ -7,7 +7,7 @@
 
 ProgressEvent *prepProgressEvent(Cell *cell_p, char *strat_p) {
     ProgressEvent *pe_p = malloc(sizeof(ProgressEvent));
-    pe_p->strat_p = strat_p;
+    pe_p->strategyName = strat_p;
     pe_p->row = cell_p->row;
     pe_p->col = cell_p->col;
     pe_p->oldValue = cell_p->value;
@@ -22,7 +22,7 @@ void updateProgressEvent(ProgressEvent *pe_p, Cell *cell_p) {
 
 void freeProgressEvent(ProgressEvent *pe_p) {
     // free string (char *)
-    free(pe_p->strat_p);
+    free(pe_p->strategyName);
 
     // free progress event pointer, itself
     free(pe_p);
@@ -30,7 +30,7 @@ void freeProgressEvent(ProgressEvent *pe_p) {
 
 void printProgressEvent(ProgressEvent *pe_p) {
     printf("progress made on cell at (%d,%d):\n", pe_p->row, pe_p->col);
-    printf("  strategy: %s\n", pe_p->strat_p);
+    printf("  strategy: %s\n", pe_p->strategyName);
     printf("  oldValue: %d\n", pe_p->oldValue);
     printf("  newValue: %d\n", pe_p->newValue);
     printf("  oldNotes: ");
@@ -62,7 +62,7 @@ int progressEventsAreEqual(ProgressEvent *pe1, ProgressEvent *pe2) {
     }
 
     return
-            strcmp(pe1->strat_p, pe2->strat_p) == 0
+            strcmp(pe1->strategyName, pe2->strategyName) == 0
             && pe1->row == pe2->row
             && pe1->col == pe2->col
             && pe1->oldValue == pe2->oldValue

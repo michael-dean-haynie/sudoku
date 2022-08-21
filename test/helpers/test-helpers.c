@@ -11,3 +11,12 @@ Grid *createEmptyGrid(void) {
     }
     return grid_p;
 }
+
+Unit *createEmptyUnit(void) {
+    Unit *unit_p = (Unit *) malloc(sizeof(Unit));
+    for (int ui = 0; ui < UNIT_SIZE; ++ui) {
+        int column = ui; // not important
+        (*unit_p)[ui] = createCell(0, column, 0);
+    }
+    return unit_p;
+}
