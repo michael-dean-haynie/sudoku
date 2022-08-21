@@ -31,19 +31,6 @@
   <component name="ChangeListManager">
     <list default="true" id="147a7656-a14b-499a-bb7d-7cec7f41d0f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cell/cell.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/cell/cell.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cell/cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/cell/cell.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progress-event/progress-event.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/progress-event/progress-event.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/progress-event/progress-event.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/progress-event/progress-event.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unit/unit.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/unit/unit.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unit/unit.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/unit/unit.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/helpers/test-helpers.c" beforeDir="false" afterPath="$PROJECT_DIR$/test/helpers/test-helpers.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/helpers/test-helpers.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/helpers/test-helpers.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +89,7 @@
       <recent name="$PROJECT_DIR$/test/unit" />
     </key>
   </component>
-  <component name="RunManager" selected="Google Test.tests">
+  <component name="RunManager" selected="Shell Script.Run Hard Puzzle (Slow)">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -154,6 +141,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Run Easy Puzzle (Slow)" type="CMakeRunConfiguration" factoryName="Application" folderName="Custom" singleton="false" PROGRAM_PARAMS="--slow" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/input/sudoku.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="app">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="app" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="app">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -184,9 +176,40 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Run Easy Puzzle (Slow)" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="clear &amp;&amp; build/src/app --slow &lt; input/sudoku.txt" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="false" />
+      <option name="EXECUTE_SCRIPT_FILE" value="false" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run Hard Puzzle (Slow)" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="clear &amp;&amp; build/src/app --slow &lt; input/sudoku-hard.txt" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="false" />
+      <option name="EXECUTE_SCRIPT_FILE" value="false" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="CMake Application.Debug Easy Puzzle" />
       <item itemvalue="CMake Application.Debug Hard Puzzle" />
+      <item itemvalue="CMake Application.Run Easy Puzzle (Slow)" />
       <item itemvalue="CMake Application.gmock" />
       <item itemvalue="CMake Application.gmock_main" />
       <item itemvalue="CMake Application.gtest" />
@@ -199,6 +222,8 @@
       <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" />
       <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow" />
       <item itemvalue="Google Test.UnitTests.GetUnitCandidatesForValueShouldReturnSingleCell" />
+      <item itemvalue="Shell Script.Run Easy Puzzle (Slow)" />
+      <item itemvalue="Shell Script.Run Hard Puzzle (Slow)" />
     </list>
     <recent_temporary>
       <list>
@@ -226,7 +251,7 @@
       <workItem from="1660952961743" duration="436000" />
       <workItem from="1660953494243" duration="1642000" />
       <workItem from="1660956169355" duration="2013000" />
-      <workItem from="1660958421496" duration="27520000" />
+      <workItem from="1660958421496" duration="28468000" />
     </task>
     <servers />
   </component>
