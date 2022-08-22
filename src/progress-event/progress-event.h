@@ -35,3 +35,9 @@ typedef struct ProgressEventList {
     int length;
     ProgressEvent **items;
 } ProgressEventList;
+
+/**
+ * Free ProgressEventList by freeing its items member, the 'items' member, and then its self
+ * @param list the ProgressEventList to free
+ */
+void freeProgressEventList(ProgressEventList *list);

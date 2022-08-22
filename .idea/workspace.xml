@@ -31,10 +31,11 @@
   <component name="ChangeListManager">
     <list default="true" id="147a7656-a14b-499a-bb7d-7cec7f41d0f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progress-event/progress-event.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/progress-event/progress-event.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/progress-event/progress-event.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/progress-event/progress-event.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/helpers/assertion-helpers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/helpers/assertion-helpers.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/helpers/assertion-helpers.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/helpers/assertion-helpers.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/execute-strategies/execute-strategies.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategies/no-duplicates/no-duplicates.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/no-duplicates/no-duplicates.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategies/no-duplicates/no-duplicates.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/no-duplicates/no-duplicates.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +119,7 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="HiddenSingleTests" TEST_METHOD="ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" TEST_MODE="SUITE_TEST">
+    <configuration name="NoDuplictesTests.ShouldReturnProgressEventIfRowHasValue" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="NoDuplictesTests" TEST_METHOD="ShouldReturnProgressEventIfRowHasValue" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -217,20 +218,20 @@
       <item itemvalue="CMake Application.applibs" />
       <item itemvalue="Google Test.tests" />
       <item itemvalue="Google Test.All in naked-single_test.cc" />
+      <item itemvalue="Google Test.NoDuplictesTests.ShouldReturnProgressEventIfRowHasValue" />
       <item itemvalue="Google Test.Playground.Playground1" />
       <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnNullIfCellDoesNotHaveHiddenSingle" />
       <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForBlock" />
-      <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" />
       <item itemvalue="Shell Script.Run Easy Puzzle (Slow)" />
       <item itemvalue="Shell Script.Run Hard Puzzle (Slow)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.NoDuplictesTests.ShouldReturnProgressEventIfRowHasValue" />
         <item itemvalue="Google Test.Playground.Playground1" />
         <item itemvalue="Google Test.All in naked-single_test.cc" />
         <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnNullIfCellDoesNotHaveHiddenSingle" />
         <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForBlock" />
-        <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +251,7 @@
       <workItem from="1660952961743" duration="436000" />
       <workItem from="1660953494243" duration="1642000" />
       <workItem from="1660956169355" duration="2013000" />
-      <workItem from="1660958421496" duration="41616000" />
+      <workItem from="1660958421496" duration="45196000" />
     </task>
     <servers />
   </component>

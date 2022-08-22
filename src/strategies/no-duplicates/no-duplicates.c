@@ -3,10 +3,13 @@
 #include "no-duplicates.h"
 #include "unit.h"
 
-ProgressEvent *noDuplicatesStrat(Grid *grid_p, int row, int col) {
+ProgressEventList *noDuplicatesStrat(Grid *grid_p, int row, int col) {
+    ProgressEventList *result = (ProgressEventList*) malloc(sizeof(ProgressEventList));
+    result->length = 0;
+
     Cell *cellToSolve = (*grid_p)[row][col];
     if (cellToSolve->value != 0) {
-        return NULL; // do not process cells already solved
+       return result; // do not process cells already solved
     }
 
     Unit *units[3] = {
@@ -35,7 +38,10 @@ ProgressEvent *noDuplicatesStrat(Grid *grid_p, int row, int col) {
                 }
 
                 // return at first progress event
-                return pe_p;
+                result->length++;
+                result->items = (ProgressEvent**) malloc(sizeof(ProgressEvent*) * result->length);
+                result->items[0] = pe_p;
+                return result;
             }
         }
     }
@@ -46,5 +52,5 @@ ProgressEvent *noDuplicatesStrat(Grid *grid_p, int row, int col) {
     }
 
     // return null pointer if no progress was made
-    return NULL;
+    return result;
 }

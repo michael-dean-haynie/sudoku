@@ -68,3 +68,11 @@ int progressEventsAreEqual(ProgressEvent *pe1, ProgressEvent *pe2) {
             && pe1->oldValue == pe2->oldValue
             && pe1->newValue == pe2->newValue;
 }
+
+void freeProgressEventList(ProgressEventList *list) {
+    for (int itemIdx = 0; itemIdx < list->length; ++itemIdx) {
+        free(list->items[itemIdx]);
+    }
+    free(list->items);
+    free(list);
+}
