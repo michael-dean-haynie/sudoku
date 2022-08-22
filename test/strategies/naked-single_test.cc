@@ -1,10 +1,11 @@
-#include <gtest/gtest.h>
-
 extern "C" {
     #include "naked-single.h"
     #include "cell.h"
     #include "test-helpers.h"
 }
+
+#include <gtest/gtest.h>
+#include "assertion-helpers.h"
 
 TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellHasNakedSingle) {
     Grid grid;
@@ -56,6 +57,33 @@ TEST(NakedSingleTests, ShouldReturnNullIfCellHasMoreThan1Candidate) {
 }
 
 //TEST(Playground, Playground1) {
-//    Grid *grid = createEmptyGrid();
-//    printPercentComplete(grid);
+//    ProgressEventList listA;
+//    listA.length = 2;
+//    listA.items = (ProgressEvent**) malloc(2 * sizeof(ProgressEvent*));
+//    listA.items[0] = (ProgressEvent*) malloc(1 * sizeof(ProgressEvent));
+//    listA.items[0]->strategyName = strdup("strategy");
+//    listA.items[0]->row = 0;
+//    listA.items[0]->col = 0;
+//    listA.items[0]->oldValue = 0;
+//    listA.items[1] = (ProgressEvent*) malloc(1 * sizeof(ProgressEvent));
+//    listA.items[1]->strategyName = strdup("strategy");
+//    listA.items[1]->row = 0;
+//    listA.items[1]->col = 1;
+//    listA.items[1]->oldValue = 0;
+//
+//    ProgressEventList listB;
+//    listB.length = 2;
+//    listB.items = (ProgressEvent**) malloc(2 * sizeof(ProgressEvent*));
+//    listB.items[0] = (ProgressEvent*) malloc(1 * sizeof(ProgressEvent));
+//    listB.items[0]->strategyName = strdup("strategy");
+//    listB.items[0]->row = 0;
+//    listB.items[0]->col = 1;
+//    listB.items[0]->oldValue = 0;
+//    listB.items[1] = (ProgressEvent*) malloc(1 * sizeof(ProgressEvent));
+//    listB.items[1]->strategyName = strdup("strategy");
+//    listB.items[1]->row = 0;
+//    listB.items[1]->col = 0;
+//    listB.items[1]->oldValue = 0;
+//
+//    assertProgressEventListsMatch(&listA, &listB);
 //}

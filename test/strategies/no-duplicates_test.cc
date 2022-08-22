@@ -1,9 +1,10 @@
-#include <gtest/gtest.h>
-
 extern "C" {
 #include "no-duplicates.h"
 #include "test-helpers.h"
 }
+
+#include <gtest/gtest.h>
+#include "assertion-helpers.h"
 
 TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
     // arrange
@@ -31,11 +32,11 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
     }
     expected.newNotes[5] = 0;
 
-    // act
-    ProgressEvent *actual = noDuplicatesStrat(&grid, 0, 0);
+    // act // TODO: pu@: make strat actually return a list
+    ProgressEventList *actual = noDuplicatesStrat(&grid, 0, 0);
 
     // assert
-    ASSERT_TRUE(progressEventsAreEqual(&expected, actual));
+    assertProgressEventListsMatch(&expected, actual);
 
 }
 

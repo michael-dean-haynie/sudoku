@@ -8,3 +8,5 @@
  * @param actual a pointer to the actual ProgressEvent
  */
 void assertProgressEventsMatch(ProgressEvent *expected, ProgressEvent *actual);
+
+void assertProgressEventListsMatch(ProgressEventList *expected, ProgressEventList *actual);

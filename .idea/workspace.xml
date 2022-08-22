@@ -31,6 +31,11 @@
   <component name="ChangeListManager">
     <list default="true" id="147a7656-a14b-499a-bb7d-7cec7f41d0f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/progress-event/progress-event.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/progress-event/progress-event.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/helpers/assertion-helpers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/helpers/assertion-helpers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/helpers/assertion-helpers.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/helpers/assertion-helpers.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/naked-single_test.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" beforeDir="false" afterPath="$PROJECT_DIR$/test/strategies/no-duplicates_test.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +86,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Debugger"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -89,10 +94,16 @@
       <recent name="$PROJECT_DIR$/test/unit" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Run Hard Puzzle (Slow)">
+  <component name="RunManager" selected="Google Test.tests">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in naked-single_test.cc" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/test/strategies/naked-single_test.cc)" TEST_MODE="PATTERN">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="HiddenSingleTests.ShouldReturnNullIfCellDoesNotHaveHiddenSingle" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="HiddenSingleTests" TEST_METHOD="ShouldReturnNullIfCellDoesNotHaveHiddenSingle" TEST_MODE="SUITE_TEST">
@@ -113,13 +124,7 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="HiddenSingleTests" TEST_METHOD="ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UnitTests.GetUnitCandidatesForValueShouldReturnSingleCell" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="UnitTests" TEST_METHOD="GetUnitCandidatesForValueShouldReturnSingleCell" TEST_MODE="SUITE_TEST">
+    <configuration name="Playground.Playground1" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="tests" TEST_CLASS="Playground" TEST_METHOD="Playground1" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -137,11 +142,6 @@
       </method>
     </configuration>
     <configuration name="Debug Hard Puzzle" type="CMakeRunConfiguration" factoryName="Application" folderName="Custom" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/input/sudoku-hard.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="app">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Run Easy Puzzle (Slow)" type="CMakeRunConfiguration" factoryName="Application" folderName="Custom" singleton="false" PROGRAM_PARAMS="--slow" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/input/sudoku.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sudoku" TARGET_NAME="app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sudoku" RUN_TARGET_NAME="app">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -209,7 +209,6 @@
     <list>
       <item itemvalue="CMake Application.Debug Easy Puzzle" />
       <item itemvalue="CMake Application.Debug Hard Puzzle" />
-      <item itemvalue="CMake Application.Run Easy Puzzle (Slow)" />
       <item itemvalue="CMake Application.gmock" />
       <item itemvalue="CMake Application.gmock_main" />
       <item itemvalue="CMake Application.gtest" />
@@ -217,21 +216,21 @@
       <item itemvalue="CMake Application.app" />
       <item itemvalue="CMake Application.applibs" />
       <item itemvalue="Google Test.tests" />
+      <item itemvalue="Google Test.All in naked-single_test.cc" />
+      <item itemvalue="Google Test.Playground.Playground1" />
       <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnNullIfCellDoesNotHaveHiddenSingle" />
       <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForBlock" />
       <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" />
-      <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow" />
-      <item itemvalue="Google Test.UnitTests.GetUnitCandidatesForValueShouldReturnSingleCell" />
       <item itemvalue="Shell Script.Run Easy Puzzle (Slow)" />
       <item itemvalue="Shell Script.Run Hard Puzzle (Slow)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.Playground.Playground1" />
+        <item itemvalue="Google Test.All in naked-single_test.cc" />
         <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnNullIfCellDoesNotHaveHiddenSingle" />
         <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForBlock" />
         <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn" />
-        <item itemvalue="Google Test.HiddenSingleTests.ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow" />
-        <item itemvalue="Google Test.UnitTests.GetUnitCandidatesForValueShouldReturnSingleCell" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +250,7 @@
       <workItem from="1660952961743" duration="436000" />
       <workItem from="1660953494243" duration="1642000" />
       <workItem from="1660956169355" duration="2013000" />
-      <workItem from="1660958421496" duration="28468000" />
+      <workItem from="1660958421496" duration="41616000" />
     </task>
     <servers />
   </component>
