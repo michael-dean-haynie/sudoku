@@ -3,7 +3,7 @@
 
 # CLion (white-list)
 /.idea/*
-!/.idea/cmake.xml # do share project configuration
+!/.idea/cmake.xml
 
 # Build Artifacts
 build
