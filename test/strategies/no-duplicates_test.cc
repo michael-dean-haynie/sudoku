@@ -1,10 +1,11 @@
-extern "C" {
-#include "no-duplicates.h"
-#include "test-helpers.h"
-}
-
 #include <gtest/gtest.h>
 #include "assertion-helpers.h"
+
+extern "C" {
+#include "no-duplicates.h"
+#include "cell.h"
+#include "test-helpers.h"
+}
 
 TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
     // arrange

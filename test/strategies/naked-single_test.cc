@@ -1,11 +1,11 @@
+#include <gtest/gtest.h>
+#include "assertion-helpers.h"
+
 extern "C" {
     #include "naked-single.h"
     #include "cell.h"
     #include "test-helpers.h"
 }
-
-#include <gtest/gtest.h>
-#include "assertion-helpers.h"
 
 TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellHasNakedSingle) {
     Grid grid;

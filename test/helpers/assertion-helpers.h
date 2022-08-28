@@ -1,6 +1,8 @@
 #pragma once
 
+extern "C" {
 #include "progress-event.h"
+}
 
 /**
  * Helper that runs google test assertions to check the values of ProgressEvent members.
