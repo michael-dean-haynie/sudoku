@@ -19,6 +19,7 @@ add_executable(
         helpers/assertion-helpers.cc
         playground_test.cc
         strategies/no-duplicates_test.cc
+        strategies/naked-pair_test.cc
         strategies/naked-single_test.cc
         strategies/hidden-single_test.cc
         unit/unit_test.cc

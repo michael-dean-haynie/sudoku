@@ -2,6 +2,7 @@
 #include "execute-strategies.h"
 #include "progress-event.h"
 #include "no-duplicates.h"
+#include "naked-pair.h"
 #include "naked-single.h"
 #include "hidden-single.h"
 
@@ -11,6 +12,7 @@ int executeStrategies(Grid *grid_p, int row, int col, int slowMode) {
             noDuplicatesStrategy,
             nakedSingleStrategy,
             hiddenSingleStrategy,
+            nakedPairStrategy
     };
 
     int stratCount = sizeof strats / sizeof strats[0];

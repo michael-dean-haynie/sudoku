@@ -6,7 +6,7 @@
 #define UNIT_SIZE 9 // number of cells in a unit
 
 // Unit: An array of Cell pointers (a row, col, or block)
-typedef Cell *(Unit[UNIT_SIZE]);
+typedef Cell *Unit[UNIT_SIZE];
 
 // Does not free cells of unit, just the array of pointers
 void freeUnit(Unit *unit_p);
