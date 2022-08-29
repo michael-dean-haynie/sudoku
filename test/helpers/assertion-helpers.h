@@ -11,4 +11,9 @@ extern "C" {
  */
 void assertProgressEventsMatch(ProgressEvent *expected, ProgressEvent *actual);
 
+/**
+ * Helper that runs google test assertions to check the values of ProgressEventLists
+ * @param expected a pointer to the expected ProgressEventList
+ * @param actual a pointer to the actual ProgressEventList
+ */
 void assertProgressEventListsMatch(ProgressEventList *expected, ProgressEventList *actual);

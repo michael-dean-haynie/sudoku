@@ -30,6 +30,11 @@ void assertProgressEventsMatch(ProgressEvent *expected, ProgressEvent *actual) {
 void assertProgressEventListsMatch(ProgressEventList *expected, ProgressEventList *actual) {
     ASSERT_EQ(expected->length, actual->length) << "lengths should match";
 
+    // exit early if lengths are zero (don't need to do anything else)
+    if (actual->length == 0) {
+        return;
+    }
+
     // List order should not matter - just need to have a 1:1 match.
     // Track the corresponding indexes of matches in either list. -1 signifies match has not been found.
     int expectedItemHasMatch[MAX_EVENTS];
