@@ -2,56 +2,66 @@
 #include "assertion-helpers.h"
 
 extern "C" {
-    #include "naked-single.h"
-    #include "cell.h"
-    #include "test-helpers.h"
+#include "naked-single.h"
+#include "cell.h"
+#include "test-helpers.h"
 }
 
-TEST(NakedSingleTests, ShouldReturnProgressEventPtrIfCellHasNakedSingle) {
-    Grid grid;
-    grid[0][0] = createCell(0, 0, 0);
+TEST(nakedSingleStrategy, ShouldSetCellValueAndReturnProgressEvent_IfCellHasNakedSingle) {
+    // arrange
+    Grid *grid = createEmptyGrid();
+    (*grid)[0][0] = createCell(0, 0, 0); // cell to solve
+
     // set notes 2-9 to false, and leave 1 as true.
     for (int i = 2; i <= MAX_VAL; i++) {
-        grid[0][0]->notes[i] = 0;
+        (*grid)[0][0]->notes[i] = 0;
     }
 
-    // prepare expected value
-    ProgressEvent expected;
-    expected.strategyName = strdup("nakedSingleStrat");
-    expected.row = 0;
-    expected.col = 0;
-    expected.oldValue = 0;
-    expected.newValue = 1;
+    ProgressEventList expectedList;
+    expectedList.length = 1;
+    expectedList.items = (ProgressEvent **) malloc(sizeof(ProgressEvent *));
+    expectedList.items[0] = createTemplateProgressEvent();
+    expectedList.items[0]->newValue = 1;
+    expectedList.items[0]->strategyName = strdup("nakedSingleStrategy");
+    // set notes[1] to true and the rest to false
     for (int i = 0; i <= MAX_VAL; i++) {
-        // set 1 to true and the rest to false
-        expected.oldNotes[i] = (i == 1) ? 1 : 0;
-        expected.newNotes[i] = (i == 1) ? 1 : 0;
+        expectedList.items[0]->oldNotes[i] = (i == 1) ? 1 : 0;
+        expectedList.items[0]->newNotes[i] = (i == 1) ? 1 : 0;
     }
 
-    // get actual value and run assertions
-    ProgressEvent *actual_p = nakedSingleStrat(&grid, 0, 0);
-    ASSERT_TRUE(progressEventsAreEqual(&expected, actual_p));
+    // act
+    ProgressEventList *actualList = nakedSingleStrategy(grid, 0, 0);
+
+    // assert
+    assertProgressEventListsMatch(&expectedList, actualList);
 }
 
+TEST(nakedSingleStrategy, ShouldJustReturnEmptyList_IfCellValueIsNonZero) {
+    // arrange
+    Grid *grid = createEmptyGrid();
+    (*grid)[0][0] = createCell(0, 0, 1); // cell to solve
 
-TEST(NakedSingleTests, ShouldReturnNullIfCellValueIsNonZero) {
-    Grid grid;
-    grid[0][0] = createCell(0, 0, 1);
+    ProgressEventList expectedList;
+    expectedList.length = 0;
 
-    ProgressEvent *expected = nullptr;
-    ProgressEvent *actual = nakedSingleStrat(&grid, 0, 0);
-    ASSERT_EQ(expected, actual);
+    // act
+    ProgressEventList *actualList = nakedSingleStrategy(grid, 0, 0);
+
+    // assert
+    assertProgressEventListsMatch(&expectedList, actualList);
 }
 
-TEST(NakedSingleTests, ShouldReturnNullIfCellHasMoreThan1Candidate) {
-    Grid grid;
-    grid[0][0] = createCell(0, 0, 0);
-    // set notes 3-9 to false, and leave 1 and 2 as true.
-    for (int i = 3; i <= MAX_VAL; i++) {
-        grid[0][0]->notes[i] = 0;
-    }
+TEST(nakedSingleStrategy, ShouldJustReturnEmptyList_IfCellHasMoreThan1Candidate) {
+    // arrange
+    Grid *grid = createEmptyGrid();
+    (*grid)[0][0] = createCell(0, 0, 0); // cell to solve
 
-    ProgressEvent *expected = nullptr;
-    ProgressEvent *actual = nakedSingleStrat(&grid, 0, 0);
-    ASSERT_EQ(expected, actual);
+    ProgressEventList expectedList;
+    expectedList.length = 0;
+
+    // act
+    ProgressEventList *actualList = nakedSingleStrategy(grid, 0, 0);
+
+    // assert
+    assertProgressEventListsMatch(&expectedList, actualList);
 }

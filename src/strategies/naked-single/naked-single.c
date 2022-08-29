@@ -2,10 +2,13 @@
 #include <string.h>
 #include "naked-single.h"
 
-ProgressEvent *nakedSingleStrat(Grid *grid_p, int row, int col) {
+ProgressEventList *nakedSingleStrategy(Grid *grid_p, int row, int col) {
+    ProgressEventList *result = (ProgressEventList *) malloc(sizeof(ProgressEventList));
+    result->length = 0;
+
     Cell *cell = (*grid_p)[row][col];
     if (cell->value != 0) {
-        return NULL; // do not process cells already solved
+        return result; // do not process cells already solved
     }
 
     int candidateCount = 0;
@@ -27,9 +30,12 @@ ProgressEvent *nakedSingleStrat(Grid *grid_p, int row, int col) {
         cell->value = lastCandidate;
         updateProgressEvent(pe, cell);
 
-        return pe;
+        result->length++;
+        result->items = (ProgressEvent **) malloc(sizeof(ProgressEvent *));
+        result->items[0] = pe;
+        return result;
     }
 
     // return null pointer if no progress was made
-    return NULL;
+    return result;
 }

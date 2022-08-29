@@ -9,7 +9,7 @@ int executeStrategies(Grid *grid_p, int row, int col, int slowMode) {
     // initialize an array of strategy functions that return ProgressEvent*
     ProgressEventList *(*strats[])(Grid *grid_p, int row, int col) = {
             noDuplicatesStrategy,
-//            nakedSingleStrat,
+//            nakedSingleStrategy,
 //            hiddenSingleStrat,
     };
 

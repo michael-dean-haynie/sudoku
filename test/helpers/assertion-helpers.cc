@@ -28,6 +28,8 @@ void assertProgressEventsMatch(ProgressEvent *expected, ProgressEvent *actual) {
 }
 
 void assertProgressEventListsMatch(ProgressEventList *expected, ProgressEventList *actual) {
+    ASSERT_TRUE(expected != nullptr) << "expected should not be null";
+    ASSERT_TRUE(actual != nullptr) << "actual should not be null";
     ASSERT_EQ(expected->length, actual->length) << "lengths should match";
 
     // exit early if lengths are zero (don't need to do anything else)
