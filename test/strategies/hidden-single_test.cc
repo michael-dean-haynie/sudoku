@@ -38,8 +38,6 @@ TEST(HiddenSingleTests, ShouldReturnProgressEventIfCellIsHasHiddenSingleForRow) 
     // assert
     assertProgressEventsMatch(&expected, actual);
     ASSERT_EQ((*grid_p)[0][0]->value, 5) << "value should be assigned";
-    // TODO: remove (debugging)
-
 }
 
 TEST(HiddenSingleTests, ShouldReturnProgressEventIfCellIsHasHiddenSingleForCollumn) {

@@ -7,54 +7,35 @@ extern "C" {
 #include "test-helpers.h"
 }
 
-TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
+TEST(noDuplicatesStrategy, ShouldRemoveCandidateAndReturnProgressEvent_IfRowHasValue) {
     // arrange
-    Grid grid;
-    for(int col = 0; col < COLS; col++) {
-        grid[0][col] = createCell(0, col, 0); // fill row with defaults
-    }
-    grid[0][0] = createCell(0, 0, 0); // cell to solve
-    grid[0][8] = createCell(0, 8, 5); // cell with value
+    Grid *grid = createEmptyGrid();
+    (*grid)[0][0] = createCell(0, 0, 0); // cell to solve
+    (*grid)[0][8] = createCell(0, 8, 5); // cell with value 5
 
-    ProgressEvent pe;
-    pe.strategyName = strdup("noDuplicatesStrat");
-    pe.row = 0;
-    pe.col = 0;
-    pe.oldValue = 0;
-    pe.newValue = 0;
-    for(int i = 0; i <= MAX_VAL; i++) {
-        if (i == 0) { // notes at [0] is always 0
-            pe.oldNotes[i] = 0;
-            pe.newNotes[i] = 0;
-        } else {
-            pe.oldNotes[i] = 1;
-            pe.newNotes[i] = 1;
-        }
-    }
-    pe.newNotes[5] = 0;
-
-    ProgressEventList expected;
-    expected.length = 1;
-    expected.items = (ProgressEvent**) malloc(sizeof(ProgressEvent*));
-    expected.items[0] = &pe;
+    ProgressEventList expectedList;
+    expectedList.length = 1;
+    expectedList.items = (ProgressEvent **) malloc(sizeof(ProgressEvent *));
+    expectedList.items[0] = createTemplateProgressEvent();
+    expectedList.items[0]->newNotes[5] = 0; // expecting the value 5 to no longer be a candidate
+    expectedList.items[0]->strategyName = strdup("noDuplicatesStrategy");
 
     // act
-    ProgressEventList *actual = noDuplicatesStrat(&grid, 0, 0);
+    ProgressEventList *actualList = noDuplicatesStrategy(grid, 0, 0);
 
     // assert
-    assertProgressEventListsMatch(&expected, actual);
-
+    ASSERT_EQ((*grid)[0][0]->notes[5], 1) << "The cell should no longer be a candidate for the value 5.";
+    assertProgressEventListsMatch(&expectedList, actualList);
 }
 
-// TODO uncomment out these tests (pu@)
-//TEST(NoDuplictesTests, ShouldReturnProgressEventIfColHasValue) {
+//TEST(noDuplicatesStrategy, ShouldReturnProgressEvent_IfColHasValue) {
 //    // arrange
 //    Grid *grid = createEmptyGrid();
 //    (*grid)[0][0] = createCell(0, 0, 0); // cell to solve
 //    (*grid)[8][0] = createCell(8, 0, 5); // cell with value
 //
 //    ProgressEvent expected;
-//    expected.strategyName = strdup("noDuplicatesStrat");
+//    expected.strategyName = strdup("noDuplicatesStrategy");
 //    expected.row = 0;
 //    expected.col = 0;
 //    expected.oldValue = 0;
@@ -71,21 +52,21 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
 //    expected.newNotes[5] = 0;
 //
 //    // act
-//    ProgressEvent *actual = noDuplicatesStrat(grid, 0, 0);
+//    ProgressEvent *actual = noDuplicatesStrategy(grid, 0, 0);
 //
 //    // assert
 //    ASSERT_TRUE(progressEventsAreEqual(&expected, actual));
 //
 //}
-//
-//TEST(NoDuplictesTests, ShouldReturnProgressEventIfBlockHasValue) {
+
+//TEST(noDuplicatesStrategy, ShouldReturnProgressEventIfBlockHasValue) {
 //    // arrange
 //    Grid *grid = createEmptyGrid();
 //    (*grid)[0][0] = createCell(0, 0, 0); // cell to solve
 //    (*grid)[2][2] = createCell(2, 2, 5); // cell with value
 //
 //    ProgressEvent expected;
-//    expected.strategyName = strdup("noDuplicatesStrat");
+//    expected.strategyName = strdup("noDuplicatesStrategy");
 //    expected.row = 0;
 //    expected.col = 0;
 //    expected.oldValue = 0;
@@ -102,14 +83,14 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
 //    expected.newNotes[5] = 0;
 //
 //    // act
-//    ProgressEvent *actual = noDuplicatesStrat(grid, 0, 0);
+//    ProgressEvent *actual = noDuplicatesStrategy(grid, 0, 0);
 //
 //    // assert
 //    ASSERT_TRUE(progressEventsAreEqual(&expected, actual));
 //
 //}
 //
-//TEST(NoDuplictesTests, ShouldReturnNullIfNoProgressWasMade) {
+//TEST(noDuplicatesStrategy, ShouldReturnNullIfNoProgressWasMade) {
 //    // arrange
 //    Grid *grid = createEmptyGrid();
 //    (*grid)[0][0] = createCell(0, 0, 0); // cell to solve
@@ -118,7 +99,7 @@ TEST(NoDuplictesTests, ShouldReturnProgressEventIfRowHasValue) {
 //    ProgressEvent *expected = nullptr;
 //
 //    // act
-//    ProgressEvent *actual = noDuplicatesStrat(grid, 0, 0);
+//    ProgressEvent *actual = noDuplicatesStrategy(grid, 0, 0);
 //
 //    // assert
 //    ASSERT_EQ(expected, actual);

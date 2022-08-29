@@ -1,3 +1,4 @@
+#include <string.h>
 #include "test-helpers.h"
 #include "grid.h"
 #include "cell.h"
@@ -19,4 +20,23 @@ Unit *createEmptyUnit(void) {
         (*unit_p)[ui] = createCell(0, column, 0);
     }
     return unit_p;
+}
+
+ProgressEvent *createTemplateProgressEvent(void) {
+    ProgressEvent *pe = (ProgressEvent*) malloc(sizeof(ProgressEvent));
+    pe->strategyName = strdup("DEFAULT TEMPLATE VALUE");
+    pe->row = 0;
+    pe->col = 0;
+    pe->oldValue = 0;
+    pe->newValue = 0;
+    for(int i = 0; i <= MAX_VAL; i++) {
+        if (i == 0) { // notes at [0] is always 0
+            pe->oldNotes[i] = 0;
+            pe->newNotes[i] = 0;
+        } else { // all other values are candidates by default
+            pe->oldNotes[i] = 1;
+            pe->newNotes[i] = 1;
+        }
+    }
+    return pe;
 }

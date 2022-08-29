@@ -10,4 +10,14 @@
  */
 Grid *createEmptyGrid(void);
 
+/**
+ * Allocates a Unit and 9 empty cells within it.
+ * @return a pointer to the newly allocated Unit
+ */
 Unit *createEmptyUnit(void);
+
+/**
+ * Allocates a ProgressEvent with default values (meant to be overridden)
+ * @return a pointer to the newly allocated ProgressEvent
+ */
+ProgressEvent *createTemplateProgressEvent(void);

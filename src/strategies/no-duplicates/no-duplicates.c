@@ -3,7 +3,7 @@
 #include "no-duplicates.h"
 #include "unit.h"
 
-ProgressEventList *noDuplicatesStrat(Grid *grid_p, int row, int col) {
+ProgressEventList *noDuplicatesStrategy(Grid *grid_p, int row, int col) {
     ProgressEventList *result = (ProgressEventList*) malloc(sizeof(ProgressEventList));
     result->length = 0;
 
