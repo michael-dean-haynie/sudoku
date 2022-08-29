@@ -84,5 +84,4 @@ TEST(noDuplicatesStrategy, ShouldJustReturnEmptyList_IfNoProgressWasMade) {
 
     // assert
     assertProgressEventListsMatch(&expectedList, actualList);
-
 }

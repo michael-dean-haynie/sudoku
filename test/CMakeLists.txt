@@ -16,7 +16,8 @@ enable_testing()
 add_executable(
         tests
         helpers/test-helpers.c
-        helpers/assertion-helpers.cpp
+        helpers/assertion-helpers.cc
+        playground_test.cc
         strategies/no-duplicates_test.cc
         strategies/naked-single_test.cc
         strategies/hidden-single_test.cc
