@@ -33,6 +33,7 @@ TEST(nakedSingleStrategy, ShouldSetCellValueAndReturnProgressEvent_IfCellHasNake
     ProgressEventList *actualList = nakedSingleStrategy(grid, 0, 0);
 
     // assert
+    ASSERT_EQ((*grid)[0][0]->value, 1) << "value should be assigned";
     assertProgressEventListsMatch(&expectedList, actualList);
 }
 

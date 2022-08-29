@@ -3,4 +3,4 @@
 #include "grid.h"
 #include "progress-event.h"
 
-ProgressEvent *hiddenSingleStrat(Grid *grid_p, int row, int col);
+ProgressEventList * hiddenSingleStrategy(Grid *grid_p, int row, int col);

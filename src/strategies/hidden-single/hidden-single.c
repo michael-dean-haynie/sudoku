@@ -4,10 +4,13 @@
 #include "progress-event.h"
 #include "unit.h"
 
-ProgressEvent *hiddenSingleStrat(Grid *grid_p, int row, int col) {
+ProgressEventList * hiddenSingleStrategy(Grid *grid_p, int row, int col) {
+    ProgressEventList *result = (ProgressEventList *) malloc(sizeof(ProgressEventList));
+    result->length = 0;
+
     Cell *cellToSolve = (*grid_p)[row][col];
     if (cellToSolve->value != 0) {
-        return NULL; // do not process cells already solved
+        return result; // do not process cells already solved
     }
 
     Unit *units[3] = {
@@ -43,7 +46,11 @@ ProgressEvent *hiddenSingleStrat(Grid *grid_p, int row, int col) {
                 freeUnit(units[0]);
                 freeUnit(units[1]);
                 freeUnit(units[2]);
-                return pe;
+
+                result->length++;
+                result->items = (ProgressEvent **) malloc(sizeof(ProgressEvent *));
+                result->items[0] = pe;
+                return result;
 
             } else {
                 freeCellList(candidateCells);
@@ -54,5 +61,5 @@ ProgressEvent *hiddenSingleStrat(Grid *grid_p, int row, int col) {
     freeUnit(units[0]);
     freeUnit(units[1]);
     freeUnit(units[2]);
-    return NULL; // no progress made
+    return result; // no progress made
 }
