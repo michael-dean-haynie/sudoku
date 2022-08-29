@@ -5,14 +5,17 @@
 #include "grid.h"
 #include "progress-event.h"
 
-ProgressEvent *prepProgressEvent(Cell *cell_p, char *strat_p) {
-    ProgressEvent *pe_p = malloc(sizeof(ProgressEvent));
-    pe_p->strategyName = strat_p;
-    pe_p->row = cell_p->row;
-    pe_p->col = cell_p->col;
-    pe_p->oldValue = cell_p->value;
-    memcpy(&pe_p->oldNotes, &cell_p->notes, sizeof(cell_p->notes));
-    return pe_p;
+ProgressEvent *prepProgressEvent(Cell *cell, char *strategyName) {
+    static int number = 0;
+
+    ProgressEvent *pe = malloc(sizeof(ProgressEvent));
+    pe->number = ++number; // chronological id
+    pe->strategyName = strategyName;
+    pe->row = cell->row;
+    pe->col = cell->col;
+    pe->oldValue = cell->value;
+    memcpy(&pe->oldNotes, &cell->notes, sizeof(cell->notes));
+    return pe;
 }
 
 void updateProgressEvent(ProgressEvent *pe_p, Cell *cell_p) {
@@ -30,6 +33,7 @@ void freeProgressEvent(ProgressEvent *pe_p) {
 
 void printProgressEvent(ProgressEvent *pe_p) {
     printf("progress made on cell at (%d,%d):\n", pe_p->row, pe_p->col);
+    printf("  number:   %d\n", pe_p->number);
     printf("  strategy: %s\n", pe_p->strategyName);
     printf("  oldValue: %d\n", pe_p->oldValue);
     printf("  newValue: %d\n", pe_p->newValue);
@@ -39,9 +43,10 @@ void printProgressEvent(ProgressEvent *pe_p) {
     printNotes(pe_p->newNotes);
 }
 
-void updateConsoleLive(Grid *grid_p) {
-    printGrid(grid_p);
-    printPercentComplete(grid_p);
+void updateConsoleLive(Grid *grid_p, ProgressEvent *pe) {
+    printProgressEvent(pe); // 7 lines
+    printGrid(grid_p); // 37 lines
+    printPercentComplete(grid_p); // 1 line
 
     // wait for 50 ms
     struct timespec ts;

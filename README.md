@@ -101,5 +101,6 @@ Some helpful run configurations have been saved under the `.run/` directory. For
 ## Stretch Goals
 
 - make this run in docker to eliminate platform issues
-- update the slow flag to re-write console history instead of blowing it up.
+- make portable by compiling down to web assembly and add web ui
+- update readme with instructions for no-ide development
 

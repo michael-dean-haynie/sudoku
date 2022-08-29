@@ -20,6 +20,7 @@ int main(int argc, char *argv[]) {
     printf("\nInitial State:\n");
     printGrid(grid_p);
     printPercentComplete(grid_p);
+    printf("\n");
 
     while (1) {
         int progressWasMade = 0;

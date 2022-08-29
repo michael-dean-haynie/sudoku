@@ -8,6 +8,7 @@
 #define MAX_EVENTS 21
 
 typedef struct ProgressEvent {
+    int number;
     char *strategyName;
     int row;
     int col;
@@ -19,7 +20,7 @@ typedef struct ProgressEvent {
 
 
 
-ProgressEvent *prepProgressEvent(Cell *cell_p, char *strat_p);
+ProgressEvent *prepProgressEvent(Cell *cell, char *strategyName);
 
 void updateProgressEvent(ProgressEvent *pe_p, Cell *cell_p);
 
@@ -27,7 +28,7 @@ void freeProgressEvent(ProgressEvent *pe_p);
 
 void printProgressEvent(ProgressEvent *pe_p);
 
-void updateConsoleLive(Grid *grid_p);
+void updateConsoleLive(Grid *grid_p, ProgressEvent *pe);
 
 int progressEventsAreEqual(ProgressEvent *pe1, ProgressEvent *pe2);
 

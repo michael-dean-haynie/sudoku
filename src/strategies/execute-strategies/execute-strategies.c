@@ -27,8 +27,7 @@ int executeStrategies(Grid *grid_p, int row, int col, int slowMode) {
 
             if (slowMode) {
                 for (int evtIdx = 0; evtIdx < pel->length; ++evtIdx) { // event index
-                    printProgressEvent(pel->items[evtIdx]);
-                    updateConsoleLive(grid_p);
+                    updateConsoleLive(grid_p, pel->items[evtIdx]);
                 }
             }
 
